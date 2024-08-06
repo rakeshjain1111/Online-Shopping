@@ -17,13 +17,13 @@
     <meta name="author" content="">
 
     <title> ${contextRoot} -${title}</title>
-
     <!-- Bootstrap core CSS -->
    <link href="${css}/bootstrap.min.css" rel="stylesheet">
-
     <!-- Add custom CSS here -->
     <link href="${css}/myapp.css" rel="stylesheet">
-
+<script type="text/javascript">
+     window.menu ='${title}';
+     </script>
 </head>
 
 <body>
@@ -46,22 +46,14 @@
 	</c:if>
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp" %>
-
+    
+           
     <!-- JavaScript -->
     <script src="${js}/jquery.js"></script>
     <script src="${js}/bootstrap.min.js"></script>
+    <script src="${js}/myapp.js"></script>
 
 </body>
 
 </html>
     
-<%-- <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>online shopping</title>
-</head>
-<body>
-  ${contextRoot} says-  ${greeting}
-</body>
-</html> --%>

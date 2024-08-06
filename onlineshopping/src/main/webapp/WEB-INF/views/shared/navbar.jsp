@@ -7,17 +7,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="${contextRoot}/home">shoppingSite</a>
+                <a class="navbar-brand" id="home" href="${contextRoot}/home">shoppingSite</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="${contextRoot}/about">About</a>
+                	<li id="home"><a href="${contextRoot}/home">Home</a>
                     </li>
-                    <li><a href="${contextRoot}/ListProducts">View Products</a>
+                    <li id="about"><a href="${contextRoot}/about">About</a>
                     </li>
-                    <li><a href="${contextRoot}/contact">Contact</a>
+                    <li id="list_product"><a href="${contextRoot}/ListProducts">View Products</a>
+                    </li>
+                    <li id=contact><a href="${contextRoot}/contact">Contact</a>
                     </li>
                 </ul>
             </div>
