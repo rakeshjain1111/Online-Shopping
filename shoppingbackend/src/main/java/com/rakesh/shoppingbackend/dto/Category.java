@@ -1,12 +1,31 @@
 package com.rakesh.shoppingbackend.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Category")
 public class Category {
 //Private Fields
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "name")
 	private int id;
+	
 	private String name;
+	
+	@Column(name = "description")
 	private String description;
+	
+	@Column(name = "image_url")
 	private String imageUrl;
+	
+	@Column(name = "is_active")
 	private boolean active =true;
 	
 	public int getId() {
@@ -24,6 +43,7 @@ public class Category {
 	public String getDescription() {
 		return description;
 	}
+	
 	public void setDescription(String description) {
 		this.description = description;
 	}
@@ -40,5 +60,10 @@ public class Category {
 		this.active = active;
 	}
 	
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageUrl=" + imageUrl
+				+ ", active=" + active + "]";
+	}
 	
 }
