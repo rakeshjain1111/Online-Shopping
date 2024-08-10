@@ -13,13 +13,11 @@ public class Category {
 //Private Fields
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "name")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
 	private String name;
 	
-	@Column(name = "description")
 	private String description;
 	
 	@Column(name = "image_url")

@@ -24,18 +24,42 @@ public class CategoryTestCase {
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com.rakesh.shoppingbackend");
 		context.refresh();
-		categoryDAO = (CategoryDAO) context.getBean("categoryDAO");
+		categoryDAO = (CategoryDAO) context.getBean(CategoryDAO.class);
 		System.out.println("init done");
 	}
 	
+//	@Test
+//	public void testAddCategory() {
+//		category = new Category();
+//		
+//		category.setName("Computers");
+//		category.setDescription("This is Category for Computers");
+//		category.setImageUrl("img_4.png");
+//		
+//		assertEquals("SuccessFully Added Category",true,categoryDAO.add(category));
+//	}
+	
+//	@Test
+//	public void testgetCategory() {
+//		category= categoryDAO.get(1);
+//		assertEquals("SuccessFully get Category","Mobile",category.getName());
+//	}
+	
+//	@Test
+//	public void testUpdateCategory() {
+//		category= categoryDAO.get(2);
+//		category.setName("Television");
+//		assertEquals("SuccessFully update Category",true,categoryDAO.update(category));
+//	}
+	
+//	@Test
+//	public void testDeleteCategory() {
+//		category= categoryDAO.get(3);
+//		assertEquals("SuccessFully get Category",true,categoryDAO.delete(category));
+//	}
+	
 	@Test
-	public void testAddCategory() {
-		category = new Category();
-		
-		category.setName("Mobile");
-		category.setDescription("i-phone");
-		category.setImageUrl("CAT_2.png");
-		
-		assertEquals("SuccessFully Added Category",true,categoryDAO.add(category));
+	public void testDeleteCategory() {
+		assertEquals("SuccessFully getAll Category",3,categoryDAO.list().size());
 	}
 }

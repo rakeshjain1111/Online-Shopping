@@ -14,18 +14,8 @@ import com.rakesh.shoppingbackend.dto.Category;
 public class App 
 {
     public static void main( String[] args )
-    {
-    	 AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
-    	context.register(HibernateConfig.class);
-    	context.refresh();
-    	CategoryDAO categoryDAO=(CategoryDAO) context.getBean(CategoryDAO.class);
-    	Category category = new Category();
-		
-		category.setName("Mobile");
-		category.setDescription("i-phone");
-		category.setImageUrl("CAT_2.png");
-		
-		categoryDAO.add(category);
+{
+//    	
     }
     
 }
