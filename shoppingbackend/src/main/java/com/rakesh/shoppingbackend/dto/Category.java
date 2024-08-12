@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Category")
+//@Table(name = "Category")
 public class Category {
 //Private Fields
 	
