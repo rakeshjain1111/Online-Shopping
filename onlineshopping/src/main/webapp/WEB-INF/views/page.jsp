@@ -19,6 +19,7 @@
     <title> ${contextRoot} -${title}</title>
     <!-- Bootstrap core CSS -->
    <link href="${css}/bootstrap.min.css" rel="stylesheet">
+   <link href="${css}/datatables.min.css" rel="stylesheet">
     <!-- Add custom CSS here -->
     <link href="${css}/myapp.css" rel="stylesheet">
 <script type="text/javascript">
@@ -55,6 +56,7 @@
     <!-- JavaScript -->
     <script src="${js}/jquery.js"></script>
     <script src="${js}/bootstrap.min.js"></script>
+    <script src="${js}/datatables.min.js"></script>
     <script src="${js}/myapp.js"></script>
 
 </body>

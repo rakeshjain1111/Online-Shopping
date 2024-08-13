@@ -74,7 +74,7 @@ public class ProductDAOImpl implements ProductDAO {
 	@Override
 	public List<Product> listActiveProducts() {
 		try {
-			String selectActiveProducts = "FROM Product Where isActive = :active";
+			String selectActiveProducts = "FROM Product Where active = :active";
 			return sessionFactory.getCurrentSession()
 									.createQuery(selectActiveProducts,Product.class)
 										.setParameter("active", true)
@@ -90,7 +90,7 @@ public class ProductDAOImpl implements ProductDAO {
 	@Override
 	public List<Product> listActiveProductsByCategory(int categoryId) {
 		try {
-			String selectActiveProducts = "FROM Product Where isActive = :active AND categoryId = :categoryId";
+			String selectActiveProducts = "FROM Product Where active = :active AND categoryId = :categoryId";
 			return sessionFactory.getCurrentSession()
 					.createQuery(selectActiveProducts,Product.class)
 						.setParameter("active", true)
@@ -106,7 +106,7 @@ public class ProductDAOImpl implements ProductDAO {
 	@Override
 	public List<Product> getLatestActiveProducts(int count) {
 		try {
-			String selectActiveProducts = "FROM Product Where isActive = :active ORDER BY id";
+			String selectActiveProducts = "FROM Product Where active = :active ORDER BY id";
 			return sessionFactory.getCurrentSession()
 					.createQuery(selectActiveProducts,Product.class)
 						.setParameter("active", true)

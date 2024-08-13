@@ -22,6 +22,18 @@
 	            </c:if>
          	   </div>
          	</div>
+        <div class="row">
+        	<div class="col-xl-12">
+        	   <table id="productListTable" class="table table-striped table-borderd">
+        	   	<thead>
+        	   		<tr>
+        	   		  <th>Id</th>
+        	   		  <th>Name</th>
+        	   		</tr>
+        	   	</thead>
+        	   </table>
+        	</div>
+        </div>
          </div>
    </div>
 	
