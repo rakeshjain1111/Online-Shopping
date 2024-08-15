@@ -25,9 +25,10 @@ public class JsonDataController {
 		return productDAO.listActiveProducts();
 	}
 	
-	@RequestMapping("/category/{id}/products")
+	@GetMapping("/category/{id}/products")
 	@ResponseBody
-	public List<Product> getProductsByCategory(@PathVariable int id){
+	public List<Product> getProductsByCategory(@PathVariable("id") int id){
+		System.out.println(id);
 		return productDAO.listActiveProductsByCategory(id);
 	}
 }

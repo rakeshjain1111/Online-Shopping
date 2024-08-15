@@ -19,13 +19,16 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="${img}/banner1.jpg" alt="banner1">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="${img}/banner2.jpg" alt="banner2">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="${img}/banner3.jpg" alt="banner3">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="${img}/banner4.jpg" alt="banner4">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">

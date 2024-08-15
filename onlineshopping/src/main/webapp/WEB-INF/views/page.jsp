@@ -10,22 +10,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title> ${contextRoot} -${title}</title>
-    <!-- Bootstrap core CSS -->
-   <link href="${css}/bootstrap.min.css" rel="stylesheet">
-   <link href="${css}/datatables.min.css" rel="stylesheet">
-    <!-- Add custom CSS here -->
-    <link href="${css}/myapp.css" rel="stylesheet">
-<script type="text/javascript">
-     window.menu ='${title}';
-     </script>
-</head>
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	
+	    <title> ${contextRoot} -${title}</title>
+	    <!-- Bootstrap core CSS -->
+	   <link href="${css}/bootstrap.css" rel="stylesheet">
+	   <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+	   <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+	    <!-- Add custom CSS here -->
+	    <link href="${css}/myapp.css" rel="stylesheet">
+		<script type="text/javascript">
+	    	 window.menu ='${title}';
+	    	 window.contextRoot ='${contextRoot}';
+	    </script>
+	</head>
 
 <body>
 
@@ -33,7 +35,7 @@
 		<%@include file="./shared/navbar.jsp" %>
    		
    		
-	    <!-- page Content -->
+    <!-- page Content -->
 	 <c:if test="${userClickHome==true }">
 		<%@include file="home.jsp" %>
 	</c:if>
@@ -49,14 +51,19 @@
 	 <c:if test="${userClickAllProducts==true or userClickCategoryProducts==true}">
 		<%@include file="listProducts.jsp" %>
 	</c:if>
+	
+	 <c:if test="${userClickShowProduct==true }">
+		<%@include file="singleProduct.jsp" %>
+	</c:if>
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp" %>
     
            
     <!-- JavaScript -->
     <script src="${js}/jquery.js"></script>
-    <script src="${js}/bootstrap.min.js"></script>
-    <script src="${js}/datatables.min.js"></script>
+    <script src="${js}/bootstrap.js"></script>
+    <script src="${js}/jquery.dataTables.js"></script>
+    <script src="${js}/dataTables.bootstrap.js"></script>
     <script src="${js}/myapp.js"></script>
 
 </body>
