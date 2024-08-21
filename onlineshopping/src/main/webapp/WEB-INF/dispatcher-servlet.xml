@@ -20,6 +20,9 @@
    </bean>
     <!-- Loading Static Resources -->
     
+    <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
+    	
+    
     <mvc:annotation-driven/>
     <mvc:resources location="/assets/" mapping="/resources/**"/>
    
