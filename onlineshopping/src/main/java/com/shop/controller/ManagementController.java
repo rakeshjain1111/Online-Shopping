@@ -19,6 +19,7 @@ import com.rakesh.shoppingbackend.dao.CategoryDAO;
 import com.rakesh.shoppingbackend.dao.ProductDAO;
 import com.rakesh.shoppingbackend.dto.Category;
 import com.rakesh.shoppingbackend.dto.Product;
+import com.rakesh.validator.ProductValidator;
 import com.shop.util.FileUploadUtility;
 
 @Controller
@@ -60,6 +61,10 @@ public class ManagementController {
 	@RequestMapping(value="/products",method=RequestMethod.POST)
 	public String handleProductSubmission(@Valid @ModelAttribute("product") Product mProduct, BindingResult result,
 			Model model, HttpServletRequest request) {
+		
+				new ProductValidator().validate(mProduct, result);
+		
+		
 		
 		if(result.hasErrors()) {
 			model.addAttribute("userClickManageProducts",true);

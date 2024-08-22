@@ -37,7 +37,6 @@ public class Product {
 	@JsonIgnore
 	private int categoryId;
 	@Column(name="is_active")
-	@JsonIgnore
 	private boolean active;
 	@Column(name="supplier_id")
 	@JsonIgnore
@@ -154,6 +153,14 @@ public class Product {
 
 	public void setFile(MultipartFile file) {
 		this.file = file;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", code=" + code + ", name=" + name + ", brand=" + brand + ", description="
+				+ description + ", unitPrice=" + unitPrice + ", quantity=" + quantity + ", categoryId=" + categoryId
+				+ ", active=" + active + ", supplierId=" + supplierId + ", purchases=" + purchases + ", views=" + views
+				+ ", file=" + file + "]";
 	}
 	
 

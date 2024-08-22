@@ -18,11 +18,19 @@ public class JsonDataController {
 
 	@Autowired
 	private ProductDAO productDAO;
-	
+	 
 	@GetMapping("/all/products")
 	@ResponseBody
 	public List<Product> getAllProducts(){
+		//System.out.print(productDAO.listActiveProducts());		
 		return productDAO.listActiveProducts();
+	}
+	
+	@GetMapping("/admin/all/products")
+	@ResponseBody
+	public List<Product> getAllProductsForAdmin(){
+		//System.out.print(productDAO.listActiveProducts());		
+		return productDAO.list();
 	}
 	
 	@GetMapping("/category/{id}/products")

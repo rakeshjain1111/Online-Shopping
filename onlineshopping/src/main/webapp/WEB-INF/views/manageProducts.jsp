@@ -75,6 +75,7 @@
 								<label class="control-label col-md-4" for="file">Select an Image:</label>
 							<div class="col-md-8">
 								 <sf:input type="file" path="file" id="file" class="form-control"/>
+								 <sf:errors path="file" cssClass="help-block" element="em"/>
 							</div>
 						</div>
 						
@@ -93,6 +94,7 @@
 						<sf:hidden path="code"/>
 						<sf:hidden path="supplierId"/>
 						<sf:hidden path="purchases"/>
+						<sf:hidden path="active"/>
 						<sf:hidden path="views"/>
 						
 						
@@ -107,5 +109,47 @@
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<h3>Available Products</h3>
+			<hr/>
+		</div>
+		<div class="col-xs-12">
+		
+			<!--  Product table for Admin   -->
+
+				<table id= "adminProductsTable" class="table table-striped table-bordered">
+					<thead>
+					  <tr>
+					  	<th>Id</th>
+					  	<th>&#160</th>
+					  	<th>Name</th>
+					  	<th>Quantity</th>
+					  	<th>Unit Price</th>
+					  	<th>Active</th>
+					  	<th>Edit</th>
+					  </tr>
+					</thead>
+					
+					<tfoot>
+					  <tr>
+					  	<th>Id</th>
+					  	<th>&#160</th>
+					  	<th>Name</th>
+					  	<th>Quantity</th>
+					  	<th>Unit Price</th>
+					  	<th>Active</th>
+					  	<th>Edit</th>
+					  </tr>
+					</tfoot>
+				
+				</table>
+		
+		
+		
+		</div>
+		
 	</div>
 </div>
