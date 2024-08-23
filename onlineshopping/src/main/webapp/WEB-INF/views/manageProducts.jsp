@@ -120,12 +120,13 @@
 		
 			<!--  Product table for Admin   -->
 
-				<table id= "adminProductsTable" class="table table-striped table-bordered">
+				<table id= "productsListTable" class="table table-striped table-bordered">
 					<thead>
 					  <tr>
 					  	<th>Id</th>
 					  	<th>&#160</th>
 					  	<th>Name</th>
+					  	<th>Brand</th>
 					  	<th>Quantity</th>
 					  	<th>Unit Price</th>
 					  	<th>Active</th>
@@ -138,6 +139,7 @@
 					  	<th>Id</th>
 					  	<th>&#160</th>
 					  	<th>Name</th>
+					  	<th>Brand</th>
 					  	<th>Quantity</th>
 					  	<th>Unit Price</th>
 					  	<th>Active</th>
