@@ -192,7 +192,7 @@ if ($productslistTable.length) {
 					if (data) {
 						str += '<label class="switch"><input type="checkbox" checked="checked" value="' + row.id + '"><div class="slider round"></div></label>';
 					} else {
-						str += '<label class="switch"><input type="checkbox" checked="checked" value="' + row.id + '"><div class="slider round"></div></label>';
+						str += '<label class="switch"><input type="checkbox"  value="' + row.id + '"><div class="slider round"></div></label>';
 					}
 
 
@@ -205,7 +205,7 @@ if ($productslistTable.length) {
 				bSortable: false,
 				mRender: function(data, type, row) {
 					var str = '';
-					str += '<a href="${contextRoot}/manage/'
+					str += '<a href="'+ window.contextRoot +'/manage/'
 						+ data + '/product" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>';
 					return str;
 				}
@@ -224,7 +224,7 @@ if ($productslistTable.length) {
 					title: 'Product activation & Deactivation',
 					message: dMsg,
 					callback: function(confirmed) {
-						if (confirmed) {
+						/*if (confirmed) {
 							$.ajax({
 								type:'GET',
 								url: window.contextRoot +'/manage/product/' +checkbox.prop('value')+'/activation',
@@ -236,7 +236,19 @@ if ($productslistTable.length) {
 									bootbox.alert('Error ' +e);
 								}
 							});
-						} else {
+						}*/
+					if (confirmed) {
+		                            console.log(value);	                            
+		                            var activationUrl = window.contextRoot+'/manage/product/'+value+'/activation';	                            
+		                            $.post(activationUrl, function(data) {
+			                            bootbox.alert({
+			                                size: 'medium',
+			                                title: 'Information',
+			                                message: data
+			                            });	                            	
+		                            });
+		                            
+		                        } else {
 							checkbox.prop('checked', !checked);
 						}
 					}

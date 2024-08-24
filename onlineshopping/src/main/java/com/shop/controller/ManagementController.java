@@ -63,6 +63,17 @@ public class ManagementController {
 	@RequestMapping(value="/products",method=RequestMethod.POST)
 	public String handleProductSubmission(@Valid @ModelAttribute("product") Product mProduct, BindingResult result,
 			Model model, HttpServletRequest request) {
+		if(mProduct.getId() == 0) {
+			new ProductValidator().validate(mProduct, result);
+		}else {
+			if(!(mProduct.getFile().getOriginalFilename().equals(""))) {
+				new ProductValidator().validate(mProduct, result);
+			}
+			
+		}
+		
+		
+		
 		
 				new ProductValidator().validate(mProduct, result);
 		
@@ -73,7 +84,16 @@ public class ManagementController {
 			model.addAttribute("title","Manage Products");
 			return "page";
 		}
-		productDAO.add(mProduct);
+		
+		if(mProduct.getId() == 0) {
+			
+			//create the new Product
+			productDAO.add(mProduct);
+		}
+		else {
+			//update the product
+			productDAO.update(mProduct);
+		}
 		
 		if(!mProduct.getFile().getOriginalFilename().equals("")) {
 			FileUploadUtility.uploadFile(request, mProduct.getFile(), mProduct.getCode());
@@ -84,7 +104,6 @@ public class ManagementController {
 	@RequestMapping(value = "/product/{id}/activation", method=RequestMethod.POST)
 	@ResponseBody
 	public String handleProductActivation(@PathVariable int id) {
-		System.out.println("Hello : "+id);
 		Product product = productDAO.get(id);
 		boolean isActive = product.isActive();
 		product.setActive(!product.isActive());
@@ -96,5 +115,16 @@ public class ManagementController {
 	
 	
 	
+	@RequestMapping(value = "/{id}/product", method=RequestMethod.GET)
+public ModelAndView showEditProducts(@PathVariable int id) {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("userClickManageProducts",true);
+		mv.addObject("title","Manage Products");
+		Product nProduct = productDAO.get(id);
+	
+		mv.addObject("product",nProduct);
+		
+		return mv;
+	}
 	
 }

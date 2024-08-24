@@ -9,16 +9,8 @@
 	          <button type="button" class="close" data-dismiss="alert">&times;</button>
 	       		${message}
 	       </div>
-	      
 	      </div>
-	    
-	    
-	    
-	    </c:if>
-	
-	
-	
-	
+       </c:if>
 		<div class="col-md-offset-2 col-md-8">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
@@ -87,7 +79,16 @@
 								 itemLabel="name"
 								 itemValue="id"
 								/>
-							
+								
+							<!--  Add new Category -->
+						<c:if test="${product.id == 0}">
+						   <div class="text-right">
+								<br/>
+								<button type="button" data-toggle="modal" data-target="#myCategoryModel" class="btn btn-warning">
+							   Add New Category</button>
+						   </div>
+						</c:if>
+							 
 							</div>
 						</div>
 						<sf:hidden path="id"/>
@@ -96,6 +97,8 @@
 						<sf:hidden path="purchases"/>
 						<sf:hidden path="active"/>
 						<sf:hidden path="views"/>
+						
+						
 						
 						
 						<div class="form-group">
@@ -154,4 +157,48 @@
 		</div>
 		
 	</div>
+
+  <div class="modal fade" id="myCategoryModel" role="dialog" tabindex="-1">
+  	<div  class="modal-dialog" role="document">
+		<div class="modal-content">
+		
+		    <!-- Model Header -->
+			<div class="modal-header">
+			   <button type="button" class="close" data-dismiss="modal">
+			      <span>&times;</span>
+			   </button>
+			   <h4 class="modal-title">Add New Category</h4>
+			</div>
+			
+			<div class="modal-body">
+				<!-- Category Form -->
+				<sf:form modelAttribute="category" action="${contextRoot}/manage/category" method="POST">
+					<div class="form-group">
+						<label for="category_name" class="control-label col-md-4">Category Name</label>
+						<div class="col-md-8">
+						  <sf:input type="text" path="name"/>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="description" class="control-label col-md-4">Product Description</label>
+						<div class="col-md-8">
+						  <sf:textarea cols="" rows="5" type="text" path="description"/>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-md-offset-4 col-md-8">
+						  <sf:textarea cols="" rows="5" type="text" path="description"/>
+						</div>
+					</div>
+				
+				</sf:form>
+				
+			</div>
+			
+		</div>  	
+  	</div>
+  </div>
+
 </div>
