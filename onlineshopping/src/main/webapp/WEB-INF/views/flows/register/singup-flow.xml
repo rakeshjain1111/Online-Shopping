@@ -6,5 +6,11 @@
 
 
 		<view-state id="personal" view="flows/register/signup-personal"></view-state>
+		
+		<end-state id="home" view="externalRedirect:contextRelative:/"></end-state>
+		
+		<global-transitions>
+			<transition on = "home" to ="home"/>
+		</global-transitions>
      
 </flow>
