@@ -1,5 +1,7 @@
 package com.rakesh.shoppingbackend.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,15 +10,24 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Address {
+public class Address implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@ManyToOne
-	private User user;
+//	@ManyToOne
+//	private User user;
 	
+	
+	@Column(name = "user_id")
+	private int userId;
+
 	@Column(name = "address_line_one")
 	private String addressLineOne;
 	@Column(name = "address_line_two")
@@ -29,15 +40,23 @@ public class Address {
 	private boolean shipping;
 	private boolean billing;
 	
+//	
+//	public User getUser() {
+//		return user;
+//	}
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
 	
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
+	
 	public int getId() {
 		return id;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public void setId(int id) {
 		this.id = id;
