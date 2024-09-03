@@ -18,11 +18,8 @@ $(function() {
 			$('#a_' + menu).addClass('active');
 			break;
 	}
-});
-
-
-
-
+	//--------------------------------------------------------------
+	
 var $table = $('#productListTable');
 
 if ($table.length) {
@@ -291,6 +288,45 @@ if($categoryForm.length){
 	});
 }
 
+//------------------------------------------------------------
+//-----validation for login form
+var $loginForm = $('#loginForm');
+if($loginForm.length){
+	$loginForm.validate({
+		rules : {
+				username : {
+					required: true,
+					email:true
+				},
+				password : {
+					required : true,
+				}
+			},
+			messages : {
+				username : {
+					required : 'Please enter the username',
+					email: 'Please enter valid email address'
+				},
+				password : {
+					required : 'Please enter the password',
+				},
+				
+			},
+			errorElement: 'em',
+				errorPlacement :function(error, element){
+					error.addClass("help-block");
+					error.insertAfter(element);
+				}
+	});
+}
+
+
+	
+	
+	
+	
+	//-------------------------------------------------------------
+});
 
 
 

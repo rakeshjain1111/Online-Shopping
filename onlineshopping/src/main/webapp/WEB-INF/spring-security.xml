@@ -9,13 +9,15 @@
 							 http://www.springframework.org/schema/security
 							 https://www.springframework.org/schema/security/spring-security.xsd">
 
-		<context:component-scan base-package="com.rakesh.shoppingbackend"/>
+	<context:component-scan base-package="com.rakesh.shoppingbackend"/>
 
+	<http pattern="/resources/**" security="none"/>
 
 	<http>
 <!-- 		<intercept-url pattern="/**" access="hasRole('USER')" /> -->
+        <intercept-url pattern="/login" access="permitAll" />
 		<intercept-url pattern="/**" access="hasAuthority('USER')" />
-		<form-login />
+		<form-login login-page="/login"/>
 		<logout />
 	</http>
 
