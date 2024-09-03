@@ -58,13 +58,13 @@
 	                        
 	                        
 	                        
-	                      <%--   <div class="form-group">
+	                        <div class="form-group">
 	                           <label class="control-label col-md-4">Confirm Password</label>
 	                           <div class="col-md-8">
 	                             <sf:password path="confirmPassword" class="form-control" placeholder="Re-Enter Password"/>
 	                             <sf:errors path="confirmPassword" cssClass="help-block" element="em"/>
 	                           </div>
-	                        </div> --%>
+	                        </div> 
 	                        
 	                        <!-- radio button using bootstrap class of radio-inline -->
 	                         <div class="form-group">

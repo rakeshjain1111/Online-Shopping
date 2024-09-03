@@ -1,6 +1,8 @@
 package com.shop.handler;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.binding.message.MessageBuilder;
+import org.springframework.binding.message.MessageContext;
 import org.springframework.stereotype.Component;
 
 import com.rakesh.shoppingbackend.dao.UserDAO;
@@ -55,7 +57,37 @@ public String saveAll(RegisterModel model ) {
 	    return transitionValue;
 	}
 	
+
 	
+
+	public String validateUser(User user, MessageContext error) {
+		
+		String transitionValue = "success";
+		
+		//checking if password matches confirm password
+		if(!(user.getPassword().equals(user.getConfirmPassword()))) {
+			error.addMessage(new MessageBuilder().error()
+					.source("confirmPassword")
+					.defaultText("Password does not match the confirm Password")
+					.build()
+					);
+			
+			transitionValue = "failure";
+		}
+		
+		//check uniqueness of email id
+		
+		if(userDAO.getByEmail(user.getEmail())!=null) {
+			error.addMessage(new MessageBuilder().error()
+					.source("email")
+					.defaultText("email id is already exist!")
+					.build()
+					);
+			transitionValue = "failure";
+		}
+		
+		return transitionValue;
+	}
 	
 	
 	

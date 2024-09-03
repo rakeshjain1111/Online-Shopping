@@ -80,7 +80,6 @@
                                 
                                  <button type="submit" class="btn btn-primary" name="_eventId_confirm"> 
                                    Next-Confirm<span class="glyphicon glyphicon-chevron-right"></span>
-                                   
                                  </button>
                               </div>
                             
