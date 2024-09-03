@@ -11,6 +11,7 @@
 	<properties>
 		<javaee.version>8.0.1</javaee.version>
 		<spring.version>5.2.12.RELEASE</spring.version>
+		<spring.security.version>4.2.2.RELEASE</spring.security.version>
 	</properties>
 	<dependencies>
 		<!-- Link Backend Project -->
@@ -47,7 +48,29 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
+		
+		
+         <!--Spring Security dependency-->
+         
+         <dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		
+		  <dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		
+		  <dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+         
+         <!--  //////////////////    -->
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
