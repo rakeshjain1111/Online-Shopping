@@ -1,4 +1,4 @@
-package com.rakesh.validator;
+package com.shop.validator;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

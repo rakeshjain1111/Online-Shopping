@@ -21,7 +21,7 @@ import com.rakesh.shoppingbackend.dao.CategoryDAO;
 import com.rakesh.shoppingbackend.dao.ProductDAO;
 import com.rakesh.shoppingbackend.dto.Category;
 import com.rakesh.shoppingbackend.dto.Product;
-import com.rakesh.validator.ProductValidator;
+import com.shop.validator.ProductValidator;
 import com.shop.util.FileUploadUtility;
 
 @Controller

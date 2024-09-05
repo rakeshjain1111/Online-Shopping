@@ -47,6 +47,17 @@
 		<!-- page Content -->
 		<div class="content">
 		    <div class="container">
+		    
+			<!--    This will be displayed if the credentials are wrong -->
+			<c:if test = "${not empty message}">
+		    	<div class="row">
+		          <div class="col-md-offset-3 col-md-6">
+		          	<div class="alert alert-danger">${message}</div>
+		          </div>
+		        </div>
+		    </c:if>
+		    
+		    
 		       <div class="row">
 		          <div class="col-md-offset-3 col-md-6">
 		          	<div class="panel panel-primary">
@@ -69,6 +80,8 @@
 		          		   		  	<input type="password" name="password" id="password" class="form-control">
 		          		   		  </div>
 		          		   		</div>
+		          		   
+		          		   			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 		          		   
 		          		   		<div class="form-group">
 		          		   		  <div class="col-md-8 col-md-offset-4">

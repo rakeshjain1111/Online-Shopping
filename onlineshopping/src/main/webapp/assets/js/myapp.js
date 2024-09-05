@@ -19,6 +19,15 @@ $(function() {
 			break;
 	}
 	//--------------------------------------------------------------
+	// to tackle the csrf token
+	var token = $('meta[name="_csrf"]').attr('content');
+	var header= $('meta[name="_csrf_header"]').attr('content');
+	
+	if(token.length > 0 && header.length > 0){
+		$(document).ajaxSend(function(e, xhr , options){
+			xhr.setRequestHeader(header, token);
+		});
+	}
 	
 var $table = $('#productListTable');
 
@@ -279,12 +288,15 @@ if($categoryForm.length){
 					required : 'Please add the category name',
 					minlength: 'The category name should not be less than two characters'
 				},
+				description : {
+					required: 'Please add discription'
+				}
+			},
 				errorElement: 'em',
 				errorPlacement :function(error, element){
 					error.addClass("help-block");
 					error.insertAfter(element);
 				}
-			}
 	});
 }
 
