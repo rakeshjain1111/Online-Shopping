@@ -43,7 +43,7 @@
   				<h6>Qty. Available : ${product.quantity}</h6>
   			</c:otherwise>
   		</c:choose>
-  		
+  	<security:authorize access="hasAuthority('USER')">	
   		<c:choose>
   			<c:when test ="${product.quantity < 1 }">
   			  <a href="javascript:void(0)" class="btn btn-success disabled"><strike>
@@ -54,7 +54,11 @@
   		<span class="glyphicon glyphicon-shopping-cart"></span>Add to cart</a>
   			</c:otherwise>
   		</c:choose>
-  		
+  		</security:authorize>
+  		<security:authorize access="hasAuthority('ADMIN')">
+  			<a href="${contextRoot}/manage/${product.id}/product" class="btn btn-warning">
+  			<span class="glyphicon glyphicon-pencil"></span>Edit</a>
+  	    </security:authorize>
  
   		
   		<a href="${contextRoot}/show/all/products" class="btn btn-primary">Back</a>
