@@ -21,7 +21,7 @@
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.css" rel="stylesheet">
 <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
-<link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+<%-- <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet"> --%>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 <!-- Add custom CSS here -->
 <link href="${css}/myapp.css" rel="stylesheet">

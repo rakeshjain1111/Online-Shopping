@@ -20,7 +20,7 @@
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.css" rel="stylesheet">
 <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
-<link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+<%-- <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet"> --%>
 <link
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
 	rel="stylesheet">
@@ -53,6 +53,14 @@
 		    	<div class="row">
 		          <div class="col-md-offset-3 col-md-6">
 		          	<div class="alert alert-danger">${message}</div>
+		          </div>
+		        </div>
+		    </c:if>
+		    
+		    <c:if test = "${not empty logout}">
+		    	<div class="row">
+		          <div class="col-md-offset-3 col-md-6">
+		          	<div class="alert alert-success">${logout}</div>
 		          </div>
 		        </div>
 		    </c:if>
