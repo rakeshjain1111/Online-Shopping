@@ -4,10 +4,14 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rakesh.shoppingbackend.dao.CartLineDAO;
+import com.rakesh.shoppingbackend.dto.Cart;
 import com.rakesh.shoppingbackend.dto.CartLine;
-
+@Repository("cartLineDAO")
+@Transactional
 public class CartLineDAOImpl implements CartLineDAO {
 	
 	@Autowired
@@ -23,6 +27,18 @@ public class CartLineDAOImpl implements CartLineDAO {
 		try {
 			sessionFactory.getCurrentSession().persist(cartLine);
 			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	
+	@Override
+	public boolean updateCart(Cart cart) {
+		try {
+			 sessionFactory.getCurrentSession().update(cart);
+			 return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;

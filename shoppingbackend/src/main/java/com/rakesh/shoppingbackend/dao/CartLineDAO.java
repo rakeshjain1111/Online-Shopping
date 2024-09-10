@@ -2,6 +2,7 @@ package com.rakesh.shoppingbackend.dao;
 
 import java.util.List;
 
+import com.rakesh.shoppingbackend.dto.Cart;
 import com.rakesh.shoppingbackend.dto.CartLine;
 
 public interface CartLineDAO {
@@ -12,7 +13,7 @@ public interface CartLineDAO {
 			public List<CartLine> list(int  cartId);
 			
 			//other business methods
-			
+			boolean updateCart(Cart cart);
 			public List<CartLine> listAvailable(int cartId);
 			public CartLine getByCartAndProduct(int cartId, int productId);
 }
