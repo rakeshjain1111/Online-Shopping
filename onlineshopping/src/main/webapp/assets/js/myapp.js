@@ -338,9 +338,31 @@ if($loginForm.length){
 				}
 	});
 }
+  //------------------------------------------------------
 
-
-	
+	$('button[name = "refreshCart"]').click(function(){
+		
+		//fetch the cart line id
+		
+		var cartLineId = $(this).attr('value');
+		var countElement = $('#count_'+cartLineId);
+		
+		var orignalCount = countElement.attr('value');
+		var currentCount = countElement.val();
+		
+		if(currentCount < 1 || currentCount >3){
+			countElement.val(orignalCount);
+			bootbox.alert({
+				size:'medium',
+				title: 'Error',
+				message:'Product count shound be minimum 1 and maximum 3 !'
+			});
+		}else{
+			var updateUrl = window.contextRoot + '/cart/' + cartLine + 'update?count=' +currentCount;
+			window.location.href = updateUrl; 
+		}
+		
+	});
 	
 	
 	
